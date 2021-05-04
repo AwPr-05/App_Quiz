@@ -1,4 +1,3 @@
-1- Tela de bem vindo ---- Fazendo
-2- fundo preto ou azul
-3- fazer a contagem da jogada pra ir mudando as opções e as ftos
-4-fazer pontuaçao para acertos
+5- Mostrar em qual pergunta estamos
+6- Mostrar pontuaçao
+7- dxar a pessoa jogar denovo

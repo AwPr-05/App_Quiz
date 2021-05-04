@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_family/screens/home_screen.dart';
+import 'package:quiz_family/screens/home_screen/home_screen.dart';
 
 main(List<String> args) => runApp(MyApp());
 
@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.red,
+        backgroundColor: Colors.red,
       ),
       home: HomeScreen(),
     );
