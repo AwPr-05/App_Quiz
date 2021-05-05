@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:quiz_family/screens/questions_screen/question2.dart';
+import 'package:quiz_family/screens/questions_screen/question7.dart';
 import 'package:quiz_family/screens/questions_screen/questions_widgets/question_button.dart';
 
-class Question1 extends StatefulWidget {
+// ignore: must_be_immutable
+class Question6 extends StatefulWidget {
   String name;
-  int correctAnswer = 0;
+  int correctAnswer = 2;
   int selectedAnswer;
 
-  Question1({this.name});
+  Question6({this.name});
 
   @override
-  _QuestionScreenState createState() => _QuestionScreenState();
+  _Question3State createState() => _Question3State();
 }
 
-class _QuestionScreenState extends State<Question1> {
+class _Question3State extends State<Question6> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +29,7 @@ class _QuestionScreenState extends State<Question1> {
               height: 40,
             ),
             Text(
-              "${widget.name}, No natal de 2018 viajamos para qual lugar ?",
+              "${widget.name}, Dezembro de 2020 Ficamos 1 mês em qual cidade?",
               style: TextStyle(
                 fontSize: 20,
                 fontStyle: FontStyle.italic,
@@ -41,7 +42,7 @@ class _QuestionScreenState extends State<Question1> {
             ),
 
             Icon(
-              FontAwesomeIcons.magic,
+              FontAwesomeIcons.calendarCheck,
               size: 60,
             ),
 
@@ -50,17 +51,17 @@ class _QuestionScreenState extends State<Question1> {
             ),
             //  Opçōes
             QuestionButton(
-                text: "Orlando",
+                text: "Fortaleza",
                 color: colorButtom(0),
                 action: () {
-                  winOrLose(true);
+                  winOrLose(false);
                   setState(() {
                     widget.selectedAnswer = 0;
                   });
                   nextScreen();
                 }),
             QuestionButton(
-                text: "Fortaleza",
+                text: "Disney",
                 color: colorButtom(1),
                 action: () {
                   winOrLose(false);
@@ -70,10 +71,10 @@ class _QuestionScreenState extends State<Question1> {
                   nextScreen();
                 }),
             QuestionButton(
-                text: "Gramado",
+                text: "Aquiraz",
                 color: colorButtom(2),
                 action: () {
-                  winOrLose(false);
+                  winOrLose(true);
                   setState(() {
                     widget.selectedAnswer = 2;
                   });
@@ -81,7 +82,7 @@ class _QuestionScreenState extends State<Question1> {
                   nextScreen();
                 }),
             QuestionButton(
-                text: "Jericoacoara",
+                text: "Miami",
                 color: colorButtom(3),
                 action: () {
                   winOrLose(false);
@@ -99,7 +100,7 @@ class _QuestionScreenState extends State<Question1> {
   Future<void> nextScreen() async {
     await Future.delayed(Duration(seconds: 1));
     Navigator.of(context)
-        .pushReplacement(MaterialPageRoute(builder: (context) => Question2(name: widget.name,)));
+        .pushReplacement(MaterialPageRoute(builder: (context) => Question7(name: widget.name))); 
   }
 
   Color colorButtom(int number) {

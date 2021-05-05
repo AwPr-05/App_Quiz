@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:quiz_family/screens/final_screen/final_screen.dart';
+import 'package:quiz_family/screens/questions_screen/question3.dart';
 import 'package:quiz_family/screens/questions_screen/questions_widgets/question_button.dart';
 
 // ignore: must_be_immutable
@@ -51,7 +51,7 @@ class _Question2State extends State<Question2> {
             ),
             //  Opçōes
             QuestionButton(
-                text: "Orlando",
+                text: "Novembro/2018",
                 color: colorButtom(0),
                 action: () {
                   winOrLose(false);
@@ -61,7 +61,7 @@ class _Question2State extends State<Question2> {
                   nextScreen();
                 }),
             QuestionButton(
-                text: "Fortaleza",
+                text: "Fevereiro/2018",
                 color: colorButtom(1),
                 action: () {
                   winOrLose(false);
@@ -71,7 +71,7 @@ class _Question2State extends State<Question2> {
                   nextScreen();
                 }),
             QuestionButton(
-                text: "Gramado",
+                text: "Dezembro/2018",
                 color: colorButtom(2),
                 action: () {
                   winOrLose(false);
@@ -82,7 +82,7 @@ class _Question2State extends State<Question2> {
                   nextScreen();
                 }),
             QuestionButton(
-                text: "Jericoacoara",
+                text: "Julho/2018",
                 color: colorButtom(3),
                 action: () {
                   winOrLose(true);
@@ -98,9 +98,9 @@ class _Question2State extends State<Question2> {
   }
 
   Future<void> nextScreen() async {
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(Duration(seconds: 1));
     Navigator.of(context)
-        .pushReplacement(MaterialPageRoute(builder: (context) => FinalScreen()));
+        .pushReplacement(MaterialPageRoute(builder: (context) => Question3(name: widget.name,)));
   }
 
   Color colorButtom(int number) {
@@ -127,7 +127,7 @@ class _Question2State extends State<Question2> {
         backgroundColor: correct? Colors.green : Colors.red,
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.SNACKBAR,
-        timeInSecForIosWeb: 2,
+        timeInSecForIosWeb: 1,
         textColor: Colors.white,
         fontSize: 18.0,
       );

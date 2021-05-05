@@ -17,12 +17,11 @@ class FinalScreen extends StatelessWidget {
             size: 100,
             color: Colors.yellow.shade700,
           ),
-
           SizedBox(
             height: 10,
           ),
           Text(
-            "Parabens, $name!!",
+            "Parabéns, $name!!",
             style: TextStyle(
               fontSize: 30,
               fontStyle: FontStyle.italic,
@@ -34,7 +33,7 @@ class FinalScreen extends StatelessWidget {
             height: 5,
           ),
           Text(
-            "Aguarde a proxima versão para receber o seu resultado...",
+            "Aguarde a proxima versão do app para receber o seu resultado...",
             style: TextStyle(
               fontSize: 15,
               fontStyle: FontStyle.italic,
@@ -42,8 +41,18 @@ class FinalScreen extends StatelessWidget {
             ),
             textAlign: TextAlign.center,
           ),
-
-
+          SizedBox(
+            height: 55,
+          ),
+          Text(
+            "Obrigado por participar do meu desenvolvimento :)",
+            style: TextStyle(
+              fontSize: 15,
+              fontStyle: FontStyle.italic,
+              fontWeight: FontWeight.bold,
+            ),
+            textAlign: TextAlign.center,
+          ),
         ],
       ),
     );

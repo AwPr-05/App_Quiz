@@ -74,131 +74,133 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Material(
       child: Container(
-        child: Column(
-          children: [
-            // Bola com icone
-            Container(
-              margin: EdgeInsets.only(top: 50),
-              decoration: BoxDecoration(
-                color: Colors.black,
-                shape: BoxShape.circle,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black38,
-                    spreadRadius: 2,
-                    blurRadius: 10,
+        child: SafeArea(
+                  child: Column(
+            children: [
+              // Bola com icone
+              Container(
+                margin: EdgeInsets.only(top: 20),
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black38,
+                      spreadRadius: 2,
+                      blurRadius: 10,
+                    ),
+                  ],
+                ),
+                height: 150,
+                width: 150,
+                child: Icon(
+                  FontAwesomeIcons.trophy,
+                  size: 70,
+                  color: Colors.yellow.shade700,
+                ),
+              ),
+
+              // Espaçamento
+              SizedBox(
+                height: 20,
+              ),
+
+              // Textos Welcome
+              Column(
+                children: [
+                  Text(
+                    "Welcome to",
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    "Streets Quizz",
+                    style: TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
-              height: 150,
-              width: 150,
-              child: Icon(
-                FontAwesomeIcons.trophy,
-                size: 70,
-                color: Colors.yellow.shade700,
+
+              // Espaçamento
+              SizedBox(
+                height: 20,
               ),
-            ),
 
-            // Espaçamento
-            SizedBox(
-              height: 20,
-            ),
-
-            // Textos Welcome
-            Column(
-              children: [
-                Text(
-                  "Welcome to",
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  "Streets Quizz",
-                  style: TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-
-            // Espaçamento
-            SizedBox(
-              height: 20,
-            ),
-
-            // Quadrado pergunta
-            Stack(
-              overflow: Overflow.visible,
-              children: [
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(25),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black38,
-                        spreadRadius: 3,
-                        blurRadius: 10,
-                      ),
-                    ],
-                  ),
-                  height: 300,
-                  width: 300,
-                  child: Column(
-                    children: [
-                      Text(
-                        "Antes de começarmos, Quanto é 2 + 2 ?",
-                        style: TextStyle(
-                          color: Colors.yellow.shade700,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
+              // Quadrado pergunta
+              Stack(
+                overflow: Overflow.visible,
+                children: [
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(25),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black38,
+                          spreadRadius: 3,
+                          blurRadius: 10,
                         ),
-                      ),
-                      Column(
-                        children: [
-                          Row(
-                            children: [
-                              criacaoOpcoes(
-                                text: "4",
-                                correct: true,
-                                id: 1,
-                              ),
-                              criacaoOpcoes(
-                                text: "5",
-                                id: 2,
-                              ),
-                            ],
+                      ],
+                    ),
+                    height: 300,
+                    width: 300,
+                    child: Column(
+                      children: [
+                        Text(
+                          "Antes de começarmos, Quanto é 2 + 2 ?",
+                          style: TextStyle(
+                            color: Colors.yellow.shade700,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
                           ),
-                          Row(
-                            children: [
-                              criacaoOpcoes(
-                                text: "10",
-                                id: 3,
-                              ),
-                              criacaoOpcoes(
-                                text: "2",
-                                id: 4,
-                              ),
-                            ],
-                          ),
-                        ],
-                      )
-                    ],
+                        ),
+                        Column(
+                          children: [
+                            Row(
+                              children: [
+                                criacaoOpcoes(
+                                  text: "4",
+                                  correct: true,
+                                  id: 1,
+                                ),
+                                criacaoOpcoes(
+                                  text: "5",
+                                  id: 2,
+                                ),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                criacaoOpcoes(
+                                  text: "10",
+                                  id: 3,
+                                ),
+                                criacaoOpcoes(
+                                  text: "2",
+                                  id: 4,
+                                ),
+                              ],
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
                   ),
-                ),
-              ],
-            ),
-            SizedBox(height: 25),
+                ],
+              ),
+              SizedBox(height: 25),
 
-            // Botao
-            HomeButtom(vaiJogar: vaiJogar),
+              // Botao
+              HomeButtom(vaiJogar: vaiJogar),
 
-            
-          ],
+              
+            ],
+          ),
         ),
       ),
     );
